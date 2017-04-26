@@ -40,7 +40,7 @@
   "homepage": "https://github.com/telemark/minelev-logs-stats",
   "now": {
     "alias": [
-      "stats.logs.minelev.t-fk.win"
+      "stats.logs.minelev.no"
     ],
     "type": "npm"
   },
