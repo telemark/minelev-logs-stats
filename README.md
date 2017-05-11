@@ -31,6 +31,7 @@ Get number of logs in queue
 - [minelev-notifications](https://github.com/telemark/minelev-notifications) notifications service for MinElev
 - [minelev-leder](https://github.com/telemark/minelev-leder) web frontend for MinElev - school administration
 - [minelev-logs](https://github.com/telemark/minelev-logs) logs service for MinElev
+- [minelev-dashboard](https://github.com/telemark/minelev-dashboard) dashboard for MinElev
 
 ## License
 
