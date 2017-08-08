@@ -1,7 +1,7 @@
 {
   "name": "minelev-logs-stats",
   "description": "Statistics from the MinElev logs",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "license": "MIT",
   "private": true,
   "author": {
@@ -56,7 +56,7 @@
   "dependencies": {
     "marked": "0.3.6",
     "micro": "8.0.0",
-    "mongojs": "2.4.1",
+    "mongojs": "2.4.0",
     "winston": "2.3.1",
     "winston-papertrail": "1.0.5"
   }
