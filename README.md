@@ -20,6 +20,10 @@ Get stats for total logs of given type (varsel|samtale)
 
 Get stats for schools
 
+### ```GET /stats/schools/:type```
+
+Get stats for schools-logs of given type (varsel|samtale)
+
 ### ```GET /stats/categories```
 
 Get stats for categories
