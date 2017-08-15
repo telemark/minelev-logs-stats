@@ -12,6 +12,10 @@ Statistics from the MinElev logs
 
 Get stats for total of logs
 
+### ```GET /stats/total/:type```
+
+Get stats for total logs of given type (varsel|samtale)
+
 ### ```GET /stats/schools```
 
 Get stats for schools
