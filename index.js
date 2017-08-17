@@ -3,12 +3,16 @@
 // Packages
 const Router = require('router')
 const finalhandler = require('finalhandler')
+const cors = require('cors')
 
 // Utilities
 const routes = require('./lib/routes')
 
 // Initialize a new router
 const router = Router()
+
+// CORS
+router.use(cors({methods: ['GET']}))
 
 router.get('/', routes.frontpage)
 router.get('/stats/total', routes.total)
