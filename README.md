@@ -14,7 +14,11 @@ Get stats for total of logs
 
 ### ```GET /stats/total/:type```
 
-Get stats for total logs of given type (varsel|samtale)
+Get stats for total logs of given type (varsel|samtale|yff)
+
+### ```GET /stats/total/category/:category```
+
+Get stats for total logs of given category
 
 ### ```GET /stats/schools```
 
@@ -22,7 +26,7 @@ Get stats for schools
 
 ### ```GET /stats/schools/:type```
 
-Get stats for schools-logs of given type (varsel|samtale)
+Get stats for schools-logs of given type (varsel|samtale|yff)
 
 ### ```GET /stats/categories```
 
