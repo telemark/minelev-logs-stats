@@ -28,6 +28,10 @@ Get stats for schools
 
 Get stats for schools-logs of given type (varsel|samtale|yff)
 
+### ```GET /stats/schools/category/:category```
+
+Get stats for schools-logs of given category
+
 ### ```GET /stats/categories```
 
 Get stats for categories
