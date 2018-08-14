@@ -40,16 +40,6 @@
     "url": "https://github.com/telemark/minelev-logs-stats/issues"
   },
   "homepage": "https://github.com/telemark/minelev-logs-stats#readme",
-  "now": {
-    "alias": [
-      "stats.logs.minelev.no"
-    ],
-    "type": "npm",
-    "engines": {
-      "node": ">=10.7.0"
-    },
-    "dotenv": "production.env"
-  },
   "devDependencies": {
     "axios": "0.18.0",
     "ava": "0.25.0",
