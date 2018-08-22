@@ -6,7 +6,7 @@ const mongojs = require('mongojs')
 const db = mongojs(config.DB)
 const logs = db.collection('logs')
 const logger = require('./logger')
-const publicDocTypes = ['atferd', 'fag', 'orden', 'samtale', 'yff-bekreftelse', 'yff-bekreftelse-bedrift', 'yff-lokalplan', 'yff-tilbakemelding']
+const publicDocTypes = ['atferd', 'fag', 'notat', 'orden', 'samtale', 'yff-bekreftelse', 'yff-bekreftelse-bedrift', 'yff-lokalplan', 'yff-tilbakemelding']
 
 exports.frontpage = (request, response) => {
   logger('info', ['routes', 'frontpage'])
