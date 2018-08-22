@@ -51,5 +51,3 @@ Get number of logs in queue
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of minelev-logs-stats](https://robots.kebabstudios.party/minelev-logs.png "Robohash image of minelev-logs-stats")
