@@ -10,7 +10,7 @@ const routes = require('./lib/routes')
 const router = Router()
 
 // CORS
-router.use(cors({methods: ['GET']}))
+router.use(cors({ methods: ['GET'] }))
 
 router.get('/', routes.frontpage)
 router.get('/stats/total', routes.total)

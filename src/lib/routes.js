@@ -16,7 +16,7 @@ exports.frontpage = (request, response) => {
 
 exports.total = (request, response) => {
   const { type } = request.params
-  const query = type ? {documentType: type, documentCategory: {'$in': publicDocTypes}} : {documentCategory: {'$in': publicDocTypes}}
+  const query = type ? { documentType: type, documentCategory: { '$in': publicDocTypes } } : { documentCategory: { '$in': publicDocTypes } }
   logger('info', ['routes', 'total', 'type', type || 'any'])
   logs.count(query, (error, count) => {
     if (error) {
@@ -24,14 +24,14 @@ exports.total = (request, response) => {
       send(response, 500, error)
     } else {
       logger('info', ['routes', 'total', 'success', count])
-      send(response, 200, {total: count})
+      send(response, 200, { total: count })
     }
   })
 }
 
 exports.categoryTotal = (request, response) => {
   const { category } = request.params
-  const query = {documentCategory: category}
+  const query = { documentCategory: category }
   logger('info', ['routes', 'categoryTotal', 'category', category])
   logs.count(query, (error, count) => {
     if (error) {
@@ -39,17 +39,17 @@ exports.categoryTotal = (request, response) => {
       send(response, 500, error)
     } else {
       logger('info', ['routes', 'categoryTotal', 'success', count])
-      send(response, 200, {total: count})
+      send(response, 200, { total: count })
     }
   })
 }
 
 exports.schools = (request, response) => {
   const { type } = request.params
-  const query = type ? {documentType: type, documentCategory: {'$in': publicDocTypes}} : {documentCategory: {'$in': publicDocTypes}}
+  const query = type ? { documentType: type, documentCategory: { '$in': publicDocTypes } } : { documentCategory: { '$in': publicDocTypes } }
   logger('info', ['routes', 'schools', 'type', type || 'any'])
-  logs.aggregate([{'$match': query}, {'$group': {'_id': '$schoolName', 'total': {'$sum': 1}}}])
-    .sort({'total': -1}, (error, data) => {
+  logs.aggregate([{ '$match': query }, { '$group': { '_id': '$schoolName', 'total': { '$sum': 1 } } }])
+    .sort({ 'total': -1 }, (error, data) => {
       if (error) {
         logger('error', ['handle-stats', 'action', 'schools', error])
         send(response, 500, error)
@@ -62,10 +62,10 @@ exports.schools = (request, response) => {
 
 exports.categorySchools = (request, response) => {
   const { category } = request.params
-  const query = {documentCategory: category}
+  const query = { documentCategory: category }
   logger('info', ['routes', 'categorySchools', 'category', category])
-  logs.aggregate([{'$match': query}, {'$group': {'_id': '$schoolName', 'total': {'$sum': 1}}}])
-    .sort({'total': -1}, (error, data) => {
+  logs.aggregate([{ '$match': query }, { '$group': { '_id': '$schoolName', 'total': { '$sum': 1 } } }])
+    .sort({ 'total': -1 }, (error, data) => {
       if (error) {
         logger('error', ['handle-stats', 'action', 'categorySchools', error])
         send(response, 500, error)
@@ -78,9 +78,9 @@ exports.categorySchools = (request, response) => {
 
 exports.categories = (request, response) => {
   logger('info', ['handle-stats', 'action', 'categories'])
-  const query = {documentCategory: {'$in': publicDocTypes}}
-  logs.aggregate([{'$match': query}, {'$group': {'_id': '$documentCategory', 'total': {'$sum': 1}}}])
-    .sort({'total': -1}, (error, data) => {
+  const query = { documentCategory: { '$in': publicDocTypes } }
+  logs.aggregate([{ '$match': query }, { '$group': { '_id': '$documentCategory', 'total': { '$sum': 1 } } }])
+    .sort({ 'total': -1 }, (error, data) => {
       if (error) {
         logger('error', ['handle-stats', 'action', 'categories', error])
         send(response, 500, error)
@@ -93,13 +93,13 @@ exports.categories = (request, response) => {
 
 exports.queue = (request, response) => {
   logger('info', ['handle-stats', 'action', 'queue'])
-  logs.count({isQueued: true}, (error, count) => {
+  logs.count({ isQueued: true }, (error, count) => {
     if (error) {
       logger('error', ['handle-stats', 'action', 'queue', error])
       send(response, 500, error)
     } else {
       logger('info', ['handle-stats', 'action', 'queue', 'success', 'found', count])
-      send(response, 200, {queue: count})
+      send(response, 200, { queue: count })
     }
   })
 }
