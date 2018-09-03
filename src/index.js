@@ -19,6 +19,8 @@ router.get('/stats/total/category/:category', routes.categoryTotal)
 router.get('/stats/schools', routes.schools)
 router.get('/stats/schools/:type', routes.schools)
 router.get('/stats/schools/category/:category', routes.categorySchools)
+router.get('/stats/usage', routes.usage)
+router.get('/stats/usage/:type', routes.usage)
 router.get('/stats/categories', routes.categories)
 router.get('/stats/queue', routes.queue)
 

@@ -31,6 +31,14 @@ Get stats for schools-logs of given type (varsel|samtale|yff)
 
 Get stats for schools-logs of given category
 
+### ```GET /stats/usage```
+
+Get stats for unique users
+
+### ```GET /stats/usage/:type```
+
+Get stats for unique users of given type (varsel|samtale|yff)
+
 ### ```GET /stats/categories```
 
 Get stats for categories

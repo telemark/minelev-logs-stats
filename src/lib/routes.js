@@ -91,6 +91,21 @@ exports.categories = (request, response) => {
     })
 }
 
+exports.usage = (request, response) => {
+  const { type } = request.params
+  const query = type ? { documentType: type, documentCategory: { '$in': publicDocTypes } } : { documentCategory: { '$in': publicDocTypes } }
+  logger('info', ['routes', 'usage', 'type', type || 'any'])
+  logs.distinct('userName', query, (error, data) => {
+    if (error) {
+      logger('error', ['handle-stats', 'action', 'usage', error])
+      send(response, 500, error)
+    } else {
+      logger('info', ['handle-stats', 'action', 'usage', 'success'])
+      send(response, 200, { total: data.length })
+    }
+  })
+}
+
 exports.queue = (request, response) => {
   logger('info', ['handle-stats', 'action', 'queue'])
   logs.count({ isQueued: true }, (error, count) => {
