@@ -15,6 +15,10 @@ Get stats for total of logs
 
 Get stats for total logs of given type (varsel|samtale|yff)
 
+### ```GET /stats/total/:type/:category```
+
+Get stats for total logs of given type (varsel|samtale|yff) filtered by category
+
 ### ```GET /stats/total/category/:category```
 
 Get stats for total logs of given category
@@ -46,6 +50,10 @@ Total milliseconds used to produce documents (sloooooow)
 ### ```GET /stats/time/:type```
 
 Total milliseconds used to produce documents (varsel|samtale|yff) (sloooooow)
+
+### ```GET /stats/time/:type/:category```
+
+Total milliseconds used to produce documents of types (varsel|samtale|yff) filtered by category (sloooooow)
 
 ### ```GET /stats/categories```
 

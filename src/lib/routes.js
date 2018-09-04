@@ -15,8 +15,8 @@ exports.frontpage = (request, response) => {
 }
 
 exports.total = (request, response) => {
-  const { type } = request.params
-  const query = type ? { documentType: type, documentCategory: { '$in': publicDocTypes } } : { documentCategory: { '$in': publicDocTypes } }
+  const { type, category } = request.params
+  const query = type ? { documentType: type, documentCategory: { '$in': category ? [category] : publicDocTypes } } : { documentCategory: { '$in': category ? [category] : publicDocTypes } }
   logger('info', ['routes', 'total', 'type', type || 'any'])
   logs.count(query, (error, count) => {
     if (error) {
@@ -93,8 +93,8 @@ exports.categories = (request, response) => {
 
 exports.time = (request, response) => {
   logger('info', ['handle-stats', 'action', 'time'])
-  const { type } = request.params
-  const query = type ? { documentType: type, documentCategory: { '$in': publicDocTypes } } : { documentCategory: { '$in': publicDocTypes } }
+  const { type, category } = request.params
+  const query = type ? { documentType: type, documentCategory: { '$in': category ? [category] : publicDocTypes } } : { documentCategory: { '$in': category ? [category] : publicDocTypes } }
   logs.find(query, { 'skjemaUtfyllingStart': 1, 'skjemaUtfyllingStop': 1 }, (error, data) => {
     if (error) {
       logger('error', ['handle-stats', 'action', 'time', error])
