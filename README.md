@@ -39,6 +39,14 @@ Get stats for unique users
 
 Get stats for unique users of given type (varsel|samtale|yff)
 
+### ```GET /stats/time```
+
+Total milliseconds used to produce documents (sloooooow)
+
+### ```GET /stats/time/:type```
+
+Total milliseconds used to produce documents (varsel|samtale|yff) (sloooooow)
+
 ### ```GET /stats/categories```
 
 Get stats for categories
