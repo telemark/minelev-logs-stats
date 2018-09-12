@@ -101,12 +101,20 @@ exports.time = (request, response) => {
       send(response, 500, error)
     } else {
       logger('info', ['handle-stats', 'action', 'time', 'success'])
-      const time = data.map(item => parseInt(item.skjemaUtfyllingStop, 10) - parseInt(item.skjemaUtfyllingStart, 10))
+      let count = 0
+      const time = data.map(item => {
+        let ms = 0
+        if (item.skjemaUtfyllingStop && item.skjemaUtfyllingStart) {
+          count++
+          ms = parseInt(item.skjemaUtfyllingStop, 10) - parseInt(item.skjemaUtfyllingStart, 10)
+        }
+        return ms
+      })
       const total = time.reduce((prev, curr) => {
         prev += curr
         return prev
       }, 0)
-      send(response, 200, { total: total })
+      send(response, 200, { total: total, count: count })
     }
   })
 }
