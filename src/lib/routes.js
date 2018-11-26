@@ -76,6 +76,38 @@ exports.categorySchools = (request, response) => {
     })
 }
 
+exports.groups = (request, response) => {
+  const { type } = request.params
+  const query = type ? { documentType: type, documentCategory: { '$in': publicDocTypes } } : { documentCategory: { '$in': publicDocTypes } }
+  logger('info', ['routes', 'groups', 'type', type || 'any'])
+  logs.aggregate([{ '$match': query }, { '$group': { '_id': '$studentMainGroupName', 'total': { '$sum': 1 } } }])
+    .sort({ 'total': -1 }, (error, data) => {
+      if (error) {
+        logger('error', ['handle-stats', 'action', 'groups', error])
+        send(response, 500, error)
+      } else {
+        logger('info', ['handle-stats', 'action', 'groups', 'success'])
+        send(response, 200, data)
+      }
+    })
+}
+
+exports.categoryClasses = (request, response) => {
+  const { category } = request.params
+  const query = { documentCategory: category }
+  logger('info', ['routes', 'categoryClasses', 'category', category])
+  logs.aggregate([{ '$match': query }, { '$group': { '_id': '$studentMainGroupName', 'total': { '$sum': 1 } } }])
+    .sort({ 'total': -1 }, (error, data) => {
+      if (error) {
+        logger('error', ['handle-stats', 'action', 'categoryClasses', error])
+        send(response, 500, error)
+      } else {
+        logger('info', ['handle-stats', 'action', 'categoryClasses', 'success'])
+        send(response, 200, data)
+      }
+    })
+}
+
 exports.categories = (request, response) => {
   logger('info', ['handle-stats', 'action', 'categories'])
   const query = { documentCategory: { '$in': publicDocTypes } }
