@@ -6,7 +6,7 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MONGODB_CONNECTION": "@db-connection",
+    "MONGODB_CONNECTION": "@db-connection-read",
     "MONGODB_COLLECTION": "logs"
   },
   "builds": [
