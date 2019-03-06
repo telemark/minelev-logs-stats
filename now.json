@@ -1,12 +1,18 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "minelev-logs-stats",
   "alias": [
     "stats.logs.minelev.no"
   ],
-  "type": "docker",
-  "dotenv": "production.env",
-  "features": {
-    "cloud": "v2"
-  }
+  "env": {
+    "NODE_ENV": "production",
+    "MONGODB_CONNECTION": "@db-connection",
+    "MONGODB_COLLECTION": "logs"
+  },
+  "builds": [
+    { "src": "/index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
 }
