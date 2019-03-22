@@ -75,6 +75,10 @@ Get stats for categories
 
 Get number of logs in queue
 
+### ```GET /stats/email```
+
+Get stats for number of kopiPrPost yff-bekreftelse-bedrift
+
 ### Related
 
 - [minelev-web](https://github.com/telemark/minelev-web) web frontend for MinElev
