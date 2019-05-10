@@ -12,7 +12,6 @@ const router = Router()
 // CORS
 router.use(cors({ methods: ['GET'] }))
 
-router.get('/', routes.frontpage)
 router.get('/stats/email', routes.email)
 router.get('/stats/total', routes.total)
 router.get('/stats/total/:type', routes.total)
