@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "minelev-logs-stats",
+  "scope": "minelev",
   "alias": [
     "stats.logs.minelev.no"
   ],
