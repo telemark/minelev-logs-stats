@@ -8,7 +8,8 @@
   "env": {
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@db-connection-read",
-    "MONGODB_COLLECTION": "logs"
+    "MONGODB_COLLECTION": "logs",
+    "MONGODB_NAME": "@db-name"
   },
   "builds": [
     {
