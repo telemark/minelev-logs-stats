@@ -21,7 +21,14 @@
     }
   ],
   "routes": [
-    { "src": "/", "dest": "/README.html"},
+    {
+      "src": "/",
+      "dest": "/README.html"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
     {
       "src": "/stats/(.*)",
       "dest": "/index.js",
