@@ -11,17 +11,24 @@
     "MONGODB_COLLECTION": "logs"
   },
   "builds": [
-    { 
-      "src": "/index.js",
-      "use": "@now/node"
-    },
     {
       "src": "/README.md",
       "use": "@now/md"
+    },
+    { 
+      "src": "/index.js",
+      "use": "@now/node"
     }
   ],
   "routes": [
     { "src": "/", "dest": "/README.html"},
-    { "src": "/stats/(.*)", "dest": "/index.js" }
+    {
+      "src": "/stats/(.*)",
+      "dest": "/index.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+      }
+    }
   ]
 }
