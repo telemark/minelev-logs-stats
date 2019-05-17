@@ -49,7 +49,7 @@
   "dependencies": {
     "finalhandler": "1.1.2",
     "micro": "9.3.4",
-    "mongodb": "3.2.4",
+    "mongodb": "3.2.5",
     "router": "1.3.3"
   }
 }
