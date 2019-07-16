@@ -1,5 +1,0 @@
-.env
-*.env
-node_modules
-now.json
-renovate.json

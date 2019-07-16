@@ -79,7 +79,19 @@ Get number of logs in queue
 
 Get stats for number of kopiPrPost yff-bekreftelse-bedrift
 
-### Related
+## Development
+
+```
+$ now dev
+```
+
+## Deploy to ZEIT/Now
+
+```
+$ npm run deploy
+```
+
+## Related
 
 - [minelev-web](https://github.com/telemark/minelev-web) web frontend for MinElev
 - [minelev-buddy](https://github.com/telemark/minelev-buddy) buddy service for MinElev

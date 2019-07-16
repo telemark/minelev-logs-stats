@@ -9,7 +9,6 @@
     "email": "geir.gasodden@pythonia.no",
     "url": "https://github.com/zrrrzzt"
   },
-  "main": "index.js",
   "engines": {
     "node": ">=10.16.0"
   },
@@ -19,14 +18,11 @@
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
-    "start": "micro",
-    "dev": "now dev",
     "deploy": "npm test && now --target production",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
     "microservice",
-    "micro",
     "MinElev",
     "logs",
     "stats",
@@ -47,9 +43,6 @@
     "standard": "13.0.2"
   },
   "dependencies": {
-    "finalhandler": "1.1.2",
-    "micro": "9.3.4",
-    "mongodb": "3.2.7",
-    "router": "1.3.3"
+    "mongodb": "3.2.7"
   }
 }
