@@ -7,9 +7,9 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MONGODB_CONNECTION": "@db-connection-read",
-    "MONGODB_COLLECTION": "logs",
-    "MONGODB_NAME": "@db-name"
+    "MONGODB_CONNECTION": "@db-cosmos-prod-connection-read",
+    "MONGODB_COLLECTION": "logs20192020",
+    "MONGODB_NAME": "minelev"
   },
   "builds": [
     {
