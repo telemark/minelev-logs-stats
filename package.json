@@ -43,6 +43,6 @@
     "standard": "13.1.0"
   },
   "dependencies": {
-    "mongodb": "3.2.7"
+    "mongodb": "3.3.0"
   }
 }
