@@ -81,8 +81,16 @@ Get stats for number of kopiPrPost yff-bekreftelse-bedrift
 
 ## Development
 
+Add a local .env file
+
 ```
-$ now dev
+MONGODB_CONNECTION=mongodb-connection-string
+MONGODB_COLLECTION=mongodb-collection-name
+MONGODB_NAME=mongodb-db-name
+```
+
+```
+$ npm run dev
 ```
 
 ## Deploy to ZEIT/Now
