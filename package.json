@@ -19,6 +19,7 @@
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
     "deploy": "npm test && now --target production",
+    "dev": "now dev",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
