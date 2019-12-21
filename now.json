@@ -9,6 +9,7 @@
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@db-cosmos-prod-connection-read",
     "MONGODB_COLLECTION": "@db-cosmos-prod-collection-logs-name",
+    "MONGODB_COLLECTION_TJOMMI": "@db-cosmos-prod-collection-tjommi-name",
     "MONGODB_NAME": "@db-cosmos-prod-db-name"
   },
   "builds": [
@@ -153,6 +154,14 @@
     {
       "src": "/stats/categories",
       "dest": "/api/categories.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+      }
+    },
+    {
+      "src": "/stats/students",
+      "dest": "/api/students-total.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"

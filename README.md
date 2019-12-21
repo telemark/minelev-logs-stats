@@ -79,6 +79,10 @@ Get number of logs in queue
 
 Get stats for number of kopiPrPost yff-bekreftelse-bedrift
 
+### ```GET /stats/students```
+
+Get the total number of students (from tjommi)
+
 ## Development
 
 Add a local .env file
@@ -86,6 +90,7 @@ Add a local .env file
 ```
 MONGODB_CONNECTION=mongodb-connection-string
 MONGODB_COLLECTION=mongodb-collection-name
+MONGODB_COLLECTION_TJOMMI=mongodb-collection-name-tjommi
 MONGODB_NAME=mongodb-db-name
 ```
 
@@ -102,7 +107,7 @@ $ npm run deploy
 ## Related
 
 - [minelev-web](https://github.com/telemark/minelev-web) web frontend for MinElev
-- [minelev-buddy](https://github.com/telemark/minelev-buddy) buddy service for MinElev
+- [minelev-tjommi-api](https://github.com/telemark/minelev-tjommi-api) tjommi service for MinElev
 - [minelev-notifications](https://github.com/telemark/minelev-notifications) notifications service for MinElev
 - [minelev-leder](https://github.com/telemark/minelev-leder) web frontend for MinElev - school administration
 - [minelev-logs](https://github.com/telemark/minelev-logs) logs service for MinElev

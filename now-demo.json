@@ -9,6 +9,7 @@
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@db-cosmos-dev-connection-read",
     "MONGODB_COLLECTION": "logs",
+    "MONGODB_COLLECTION_TJOMMI": "tjommi",
     "MONGODB_NAME": "minelev"
   },
   "builds": [
