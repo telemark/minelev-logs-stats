@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/telemark/minelev-logs-stats#readme",
   "devDependencies": {
-    "ava": "2.4.0",
+    "ava": "3.9.0",
     "coveralls": "3.0.9",
     "nyc": "15.0.0",
     "standard": "14.3.1"
