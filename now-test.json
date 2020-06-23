@@ -3,7 +3,7 @@
   "name": "minelev-logs-stats-test",
   "scope": "vtfk",
   "alias": [
-    "stats.minelev.vtfk.dev"
+    "logs-stats.minelev.vtfk.dev"
   ],
   "env": {
     "NODE_ENV": "production",
