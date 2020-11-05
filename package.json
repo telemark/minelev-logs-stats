@@ -47,6 +47,6 @@
     "standard": "14.3.4"
   },
   "dependencies": {
-    "mongodb": "3.5.9"
+    "mongodb": "3.5.11"
   }
 }
