@@ -7,7 +7,7 @@ module.exports = async (request, response) => {
   logger('info', ['handle-stats', 'action', 'email'])
   const query = {
     type: 'yff',
-    variant: 'bekreftelse-bedrift',
+    variant: 'bekreftelse',
     'content.bekreftelse.kopiPrEpost': { $exists: true, $ne: '' }
   }
   try {
