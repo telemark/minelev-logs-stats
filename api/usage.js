@@ -14,9 +14,9 @@ module.exports = async (request, response) => {
   const logs = db.collection(process.env.MONGODB_COLLECTION)
   const params = getParams(request.url)
   const { type } = params
-  const query = type ? { documentType: type, documentCategory: { $in: publicDocTypes } } : { documentCategory: { $in: publicDocTypes } }
+  const query = type ? { type: type, variant: { $in: publicDocTypes } } : { variant: { $in: publicDocTypes } }
   logger('info', ['routes', 'usage', 'type', type || 'any'])
-  logs.distinct('userName', query, (error, data) => {
+  logs.distinct('teacher.name', query, (error, data) => {
     if (error) {
       logger('error', ['handle-stats', 'action', 'usage', error])
       response.status(500)

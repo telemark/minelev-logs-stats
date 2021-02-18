@@ -10,7 +10,7 @@
     "url": "https://github.com/zrrrzzt"
   },
   "engines": {
-    "node": ">=10.18.0"
+    "node": "14.x"
   },
   "scripts": {
     "test": "standard && npm audit && ava",
@@ -18,11 +18,11 @@
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
-    "deploy": "npm test && now --prod && rm -rf .vercel",
-    "deploy:prod": "npm test && now --local-config now-prod.json --prod --confirm && rm -rf .vercel",
-    "deploy:test": "npm test && now --local-config now-test.json --prod --confirm && rm -rf .vercel",
-    "deploy:demo": "npm test && now --local-config now-demo.json --prod --confirm && rm -rf .vercel",
-    "dev": "now dev",
+    "deploy": "npm test && vercel --prod && rm -rf .vercel",
+    "deploy:prod": "npm test && vercel --local-config now-prod.json --prod --confirm && rm -rf .vercel",
+    "deploy:test": "npm test && vercel --local-config now-test.json --prod --confirm && rm -rf .vercel",
+    "deploy:demo": "npm test && vercel --local-config now-demo.json --prod --confirm && rm -rf .vercel",
+    "dev": "vercel dev",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
@@ -30,7 +30,7 @@
     "MinElev",
     "logs",
     "stats",
-    "Telemark fylkeskommune"
+    "Vestfold og Telemark fylkeskommune"
   ],
   "repository": {
     "type": "git",
@@ -41,12 +41,12 @@
   },
   "homepage": "https://github.com/telemark/minelev-logs-stats#readme",
   "devDependencies": {
-    "ava": "3.9.0",
+    "ava": "3.15.0",
     "coveralls": "3.1.0",
-    "nyc": "15.0.1",
-    "standard": "14.3.4"
+    "nyc": "15.1.0",
+    "standard": "16.0.3"
   },
   "dependencies": {
-    "mongodb": "3.5.9"
+    "mongodb": "3.6.4"
   }
 }

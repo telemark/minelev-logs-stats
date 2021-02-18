@@ -9,7 +9,7 @@
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@minelev-prod-db-connection-read",
     "MONGODB_COLLECTION": "@minelev-prod-db-collection-logs",
-    "MONGODB_COLLECTION_TJOMMI": "@minelev-prod-db-collection-pifu",
+    "MONGODB_COLLECTION_PIFU": "@minelev-prod-db-collection-pifu",
     "MONGODB_NAME": "@minelev-prod-db-name"
   },
   "builds": [
@@ -19,7 +19,7 @@
     },
     { 
       "src": "/api/*.js",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -82,22 +82,6 @@
     {
       "src": "/stats/usage/(.*)",
       "dest": "/api/usage.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-      }
-    },
-    {
-      "src": "/stats/time",
-      "dest": "/api/time.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-      }
-    },
-    {
-      "src": "/stats/time/(.*)",
-      "dest": "/api/time.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"

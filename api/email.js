@@ -6,9 +6,9 @@ module.exports = async (request, response) => {
   const logs = db.collection(process.env.MONGODB_COLLECTION)
   logger('info', ['handle-stats', 'action', 'email'])
   const query = {
-    documentType: 'yff',
-    documentCategory: 'yff-bekreftelse-bedrift',
-    kopiPrEpost: { $exists: true, $ne: '' }
+    type: 'yff',
+    variant: 'bekreftelse',
+    'content.bekreftelse.kopiPrEpost': { $exists: true, $ne: '' }
   }
   try {
     const count = await logs.countDocuments(query)

@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "minelev-logs-stats",
-  "scope": "minelev",
+  "scope": "vtfk",
   "alias": [
     "stats.logs.minelev.no"
   ],
@@ -9,7 +9,7 @@
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@db-cosmos-prod-connection-read",
     "MONGODB_COLLECTION": "@db-cosmos-prod-collection-logs-name",
-    "MONGODB_COLLECTION_TJOMMI": "@db-cosmos-prod-collection-tjommi-name",
+    "MONGODB_COLLECTION_PIFU": "@db-cosmos-prod-collection-tjommi-name",
     "MONGODB_NAME": "@db-cosmos-prod-db-name"
   },
   "builds": [

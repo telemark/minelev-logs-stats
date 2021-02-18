@@ -5,8 +5,8 @@ const publicDocTypes = require('../lib/public-doctypes')
 module.exports = async (request, response) => {
   const db = await mongo()
   const logs = db.collection(process.env.MONGODB_COLLECTION)
-  const query = { documentCategory: { $in: publicDocTypes } }
-  logs.aggregate([{ $match: query }, { $group: { _id: '$documentCategory', total: { $sum: 1 } } }])
+  const query = { variant: { $in: publicDocTypes } }
+  logs.aggregate([{ $match: query }, { $group: { _id: '$variant', total: { $sum: 1 } } }])
     .sort({ total: -1 }).toArray((error, data) => {
       if (error) {
         logger('error', ['handle-stats', 'action', 'categories', error])
