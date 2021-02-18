@@ -13,9 +13,9 @@ module.exports = async (request, response) => {
   const logs = db.collection(process.env.MONGODB_COLLECTION)
   const params = getParams(request.url)
   const { category } = params
-  const query = { documentCategory: category }
+  const query = { variant: category }
   logger('info', ['routes', 'categorySchools', 'category', category])
-  logs.aggregate([{ $match: query }, { $group: { _id: '$schoolName', total: { $sum: 1 } } }])
+  logs.aggregate([{ $match: query }, { $group: { _id: '$school.name', total: { $sum: 1 } } }])
     .sort({ total: -1 }).toArray((error, data) => {
       if (error) {
         logger('error', ['handle-stats', 'action', 'categorySchools', error])

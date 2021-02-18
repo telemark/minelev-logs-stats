@@ -55,14 +55,6 @@ Get stats for unique users
 
 Get stats for unique users of given type (varsel|samtale|yff)
 
-### ```GET /stats/time```
-
-Total milliseconds used to produce documents (sloooooow)
-
-### ```GET /stats/time/:type```
-
-Total milliseconds used to produce documents (varsel|samtale|yff) (sloooooow)
-
 ### ```GET /stats/time/:type/:category```
 
 Total milliseconds used to produce documents of types (varsel|samtale|yff) filtered by category (sloooooow)
@@ -81,7 +73,7 @@ Get stats for number of kopiPrPost yff-bekreftelse-bedrift
 
 ### ```GET /stats/students```
 
-Get the total number of students (from tjommi)
+Get the total number of students (from pifu)
 
 ## Development
 
@@ -90,7 +82,7 @@ Add a local .env file
 ```
 MONGODB_CONNECTION=mongodb-connection-string
 MONGODB_COLLECTION=mongodb-collection-name
-MONGODB_COLLECTION_TJOMMI=mongodb-collection-name-tjommi
+MONGODB_COLLECTION_PIFU=mongodb-collection-name-pifu
 MONGODB_NAME=mongodb-db-name
 ```
 
@@ -106,10 +98,10 @@ $ npm run deploy
 
 ## Related
 
-- [minelev-web](https://github.com/telemark/minelev-web) web frontend for MinElev
-- [minelev-tjommi-api](https://github.com/telemark/minelev-tjommi-api) tjommi service for MinElev
+- [minelev-web](https://github.com/vtfk/minelev-web) web frontend for MinElev
+- [minelev-pifu-api](https://github.com/vtfk/azf-pifu-api) pifu azure function for MinElev
 - [minelev-notifications](https://github.com/telemark/minelev-notifications) notifications service for MinElev
-- [minelev-leder](https://github.com/telemark/minelev-leder) web frontend for MinElev - school administration
+- [minelev-leder](https://github.com/vtfk/minelev-leder-web) web frontend for MinElev - school administration
 - [minelev-logs](https://github.com/telemark/minelev-logs) logs service for MinElev
 - [minelev-dashboard](https://github.com/telemark/minelev-dashboard) dashboard for MinElev
 

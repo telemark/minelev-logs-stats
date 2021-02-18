@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "minelev-logs-stats-demo",
-  "scope": "minelev",
+  "scope": "vtfk",
   "alias": [
     "stats.logs.minelev.win"
   ],
@@ -9,7 +9,7 @@
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@db-cosmos-dev-connection-read",
     "MONGODB_COLLECTION": "logs",
-    "MONGODB_COLLECTION_TJOMMI": "tjommi",
+    "MONGODB_COLLECTION_PIFU": "pifu",
     "MONGODB_NAME": "minelev"
   },
   "builds": [
@@ -19,7 +19,7 @@
     },
     { 
       "src": "/api/*.js",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -82,22 +82,6 @@
     {
       "src": "/stats/usage/(.*)",
       "dest": "/api/usage.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-      }
-    },
-    {
-      "src": "/stats/time",
-      "dest": "/api/time.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-      }
-    },
-    {
-      "src": "/stats/time/(.*)",
-      "dest": "/api/time.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
