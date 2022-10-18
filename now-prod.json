@@ -13,10 +13,6 @@
     "MONGODB_NAME": "@minelev-prod-db-name"
   },
   "builds": [
-    {
-      "src": "/README.md",
-      "use": "@now/md"
-    },
     { 
       "src": "/api/*.js",
       "use": "@vercel/node"
