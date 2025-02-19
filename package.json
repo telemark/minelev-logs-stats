@@ -10,7 +10,7 @@
     "url": "https://github.com/zrrrzzt"
   },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "scripts": {
     "test": "standard && npm audit && ava",
